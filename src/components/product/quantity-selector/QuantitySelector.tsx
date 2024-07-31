@@ -12,11 +12,8 @@ interface Props {
 
 export const QuantitySelector = ( { quantity, onQuantityChanged }: Props ) => {
 
-
   const onValueChanged = ( value: number ) => {
-    
     if ( quantity + value < 1 ) return;
-
     onQuantityChanged( quantity + value );
   };
 
