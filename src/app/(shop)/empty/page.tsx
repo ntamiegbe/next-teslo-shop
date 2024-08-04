@@ -5,23 +5,22 @@ export default function EmptyPage() {
   return (
     <div className="flex justify-center items-center h-[800px]">
 
-      <IoCartOutline size={ 80 } className="mx-5" />
+      <IoCartOutline size={80} className="mx-5" />
 
       <div className="flex flex-col items-center">
         <h1 className="text-xl font-semibold">
-          Tu carrito está vacío
+          Your cart is empty
         </h1>
 
-        <Link 
+        <Link
           href='/'
           className="text-blue-500 mt-2 text-4xl"
         >
-          Regresar
+          Go back
         </Link>
 
       </div>
 
-      
     </div>
   );
 }

@@ -21,7 +21,7 @@ export const ProductImage = ({
   const localSrc = ( src ) 
     ? src.startsWith('http') // https://urlcompletodelaimagen.jpg
       ? src
-      : `/products/${ src }`
+      : `${src}`
     : '/imgs/placeholder.jpg';
 
   return (

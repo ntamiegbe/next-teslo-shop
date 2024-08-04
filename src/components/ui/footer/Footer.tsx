@@ -3,13 +3,13 @@ import Link from 'next/link';
 
 export const Footer = () => {
   return (
-    <div className="flex w-full justify-center text-xs mb-10">
+    <div className="flex w-full justify-center items-center bg-[#222222] text-white py-10 bg-white z-10">
 
       <Link
         href='/'
       >
-        <span className={`${ titleFont.className } antialiased font-bold `}>Teslo </span>
-        <span>| shop </span>
+        <span className={`${ titleFont.className } antialiased font-bold `}>Summit </span>
+        <span>| AutoTech </span>
         <span>© { new Date().getFullYear() }</span>
       </Link>
 

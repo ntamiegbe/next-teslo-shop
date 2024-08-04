@@ -5,7 +5,6 @@ export interface Product {
   inStock: number;
   price: number;
   slug: string;
-  tags?: string[];
   title: string;
 }
 
@@ -17,7 +16,6 @@ export interface CartProduct {
   quantity: number;
   image: string;
 }
-
 
 export interface ProductImage {
   id: number;

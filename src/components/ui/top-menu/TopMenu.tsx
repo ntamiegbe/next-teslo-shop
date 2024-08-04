@@ -1,17 +1,13 @@
 "use client";
-import { useEffect, useState } from 'react';
 
+import { useEffect, useState } from 'react';
 import Link from "next/link";
 import { IoSearchOutline, IoCartOutline } from "react-icons/io5";
-
 import { titleFont } from "@/config/fonts";
-import { useCartStore, useUIStore } from "@/store";
+import { useCartStore } from "@/store";
 
 export const TopMenu = () => {
-
-  const openSideMenu = useUIStore((state) => state.openSideMenu);
   const totalItemsInCart = useCartStore((state) => state.getTotalItems());
-  
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
@@ -19,21 +15,20 @@ export const TopMenu = () => {
   }, [])
   
   return (
-    <nav className="flex px-5 justify-between items-center w-full">
-      {/* Logo */}
+    <nav className="flex px-5 py-10 fixed top-0 z-50 bg-white drop-shadow border-b justify-between items-center w-full">
       <div>
         <Link href="/">
-          <span className={`${titleFont.className } antialiased font-bold`}>
-            Teslo
+          <span className={`${titleFont.className } antialiased font-bold text-lg`}>
+            Summit
           </span>
-          <span> | Shop</span>
+          <span> | AutoTech</span>
         </Link>
       </div>
 
       {/* Search, Cart, Menu */}
       <div className="flex items-center">
         <Link href="/search" className="mx-2">
-          <IoSearchOutline className="w-5 h-5" />
+          <IoSearchOutline className="w-7 h-7" />
         </Link>
 
         <Link href={
@@ -47,16 +42,9 @@ export const TopMenu = () => {
                 {totalItemsInCart}
               </span>
             )}
-            <IoCartOutline className="w-5 h-5" />
+            <IoCartOutline className="w-7 h-7" />
           </div>
         </Link>
-
-        <button
-          onClick={openSideMenu}
-          className="m-2 p-2 rounded-md transition-all hover:bg-gray-100"
-        >
-          Menú
-        </button>
       </div>
     </nav>
   );

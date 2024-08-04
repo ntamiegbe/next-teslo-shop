@@ -23,8 +23,6 @@ export const ProductsInCart = () => {
   },[]);
 
 
-
-
   if( !loaded ) {
     return <p>Loading...</p>
   }
@@ -32,14 +30,14 @@ export const ProductsInCart = () => {
   return (
     <>
       {productsInCart.map((product) => (
-        <div key={ `${ product.slug }-${ product.size }`  } className="flex mb-5">
+        <div key={ `${ product.slug }-`  } className="flex mb-5">
           <ProductImage
             src={product.image }
             width={100}
             height={100}
             style={{
-              width: "100px",
-              height: "100px",
+              width: "120px",
+              height: "120px",
             }}
             alt={product.title}
             className="mr-5 rounded"
@@ -48,11 +46,11 @@ export const ProductsInCart = () => {
           <div>
             <Link 
               className="hover:underline cursor-pointer"
-              href={ `/product/${ product.slug } ` }>
-              { product.size } - {product.title}
+              href={ `/product/${ product.id } ` }>
+              {product.title}
             </Link>
             
-            <p>${product.price}</p>
+            <p>₦{product.price}</p>
             <QuantitySelector 
               quantity={ product.quantity } 
               onQuantityChanged={ quantity => updateProductQuantity(product, quantity) }
@@ -60,7 +58,7 @@ export const ProductsInCart = () => {
 
             <button 
               onClick={ () => removeProduct(product) }
-              className="underline mt-3">Remover</button>
+              className="underline mt-3">Remove</button>
           </div>
         </div>
       ))}
