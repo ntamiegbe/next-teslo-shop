@@ -15,7 +15,7 @@ export const TopMenu = () => {
   }, [])
   
   return (
-    <nav className="flex px-5 py-10 fixed top-0 z-50 bg-white drop-shadow border-b justify-between items-center w-full">
+    <nav className="flex px-5 py-5 lg:py-10 max-sm:mb-4 fixed top-0 z-50 bg-white drop-shadow border-b justify-between items-center w-full">
       <div>
         <Link href="/">
           <span className={`${titleFont.className } antialiased font-bold text-lg`}>
