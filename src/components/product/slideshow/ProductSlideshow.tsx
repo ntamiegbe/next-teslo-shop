@@ -48,7 +48,7 @@ export const ProductSlideshow = ({ products, className }: Props) => {
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
           {products.map((product, productIndex) => (
-            <div key={product.id} className="embla__slide relative w-full h-[80vh]">
+            <div key={product.id} className="embla__slide relative w-full h-[50vh] lg:h-[80vh]">
               <Image
                 src={product.images[0]}
                 alt={`${product.title}`}

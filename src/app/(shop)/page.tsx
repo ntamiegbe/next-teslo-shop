@@ -11,7 +11,7 @@ export default async function Home() {
         className="mb-2"
       /> */}
 
-      <ProductSlideshow products={products} className='max-lg:hidden' />
+      <ProductSlideshow products={products} />
 
       <div className="my-10">
         <ProductGrid
