@@ -44,13 +44,9 @@ export default function ProductGridItem({ product }: Props) {
   };
 
   return (
-    <div className="relative">
-      <motion.div
-        className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl bg-white"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        whileHover={{ scale: 1.03 }}
-        transition={{ type: "spring" }}
+    <>
+      <div
+        className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl bg-white p-2"
       >
         <div className="relative">
           <Link href={`/product/${product.id}`}>
@@ -84,13 +80,12 @@ export default function ProductGridItem({ product }: Props) {
           )}
         </div>
 
-        <div className="p-4">
-          <Link
+        <Link href={`/product/${product.id}`} className="p-8">
+          <h2
             className="text-xl font-semibold text-gray-800 hover:text-indigo-600 transition-colors duration-200"
-            href={`/product/${product.slug}`}
           >
             {product.title}
-          </Link>
+          </h2>
           <p className="text-sm text-gray-600 mt-2 line-clamp-2">{product.description}</p>
           <div className="mt-4">
             <span className="text-2xl font-bold text-indigo-600">₦{product.price.toLocaleString()}</span>
@@ -108,7 +103,7 @@ export default function ProductGridItem({ product }: Props) {
               Add to Cart
             </motion.button>
           </div>
-        </div>
+        </Link>
 
         {isHovered && (
           <motion.div
@@ -120,7 +115,7 @@ export default function ProductGridItem({ product }: Props) {
             <span className="text-sm font-semibold text-gray-800">In Stock: {product.inStock}</span>
           </motion.div>
         )}
-      </motion.div>
+      </div>
 
       <AnimatePresence>
         {showToast && (
@@ -128,13 +123,13 @@ export default function ProductGridItem({ product }: Props) {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            className="fixed bottom-5 left-5 bg-green-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center"
+            className="fixed bottom-5 left-5 bg-green-100 text-green-500 px-4 py-2 rounded-full shadow-lg flex items-center"
           >
             <Check size={20} className="mr-2" />
             Product added to cart!
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 };

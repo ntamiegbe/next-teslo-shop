@@ -38,7 +38,7 @@ export const ProductSlideshow = ({ products, className }: Props) => {
   useEffect(() => {
     const timer = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 7000); // Change slide every 7 seconds
+    }, 3000); // Change slide every 3 seconds
 
     return () => clearInterval(timer);
   }, [emblaApi]);
@@ -58,7 +58,8 @@ export const ProductSlideshow = ({ products, className }: Props) => {
               />
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70"></div>
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white p-8">
+              {/* Adjusted Text Positioning */}
+              <div className="absolute inset-y-0 left-0 right-0 flex flex-col items-start justify-center text-left text-white p-8">
                 <motion.h2
                   className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-wider"
                   initial={{ opacity: 0, y: 20 }}
@@ -105,4 +106,4 @@ export const ProductSlideshow = ({ products, className }: Props) => {
       </div>
     </div>
   );
-};
+}
