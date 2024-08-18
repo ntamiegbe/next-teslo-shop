@@ -5,15 +5,16 @@ import { FaInstagram, FaTiktok } from 'react-icons/fa';
 
 export const Footer = () => {
   return (
-    <div className="flex flex-col lg:flex-row justify-between items-center bg-[#222222] text-white lg:py-10 py-5 px-5">
+    <div className="flex flex-col lg:flex-row justify-between items-center bg-[#1e186f] text-white lg:py-10 py-5 px-5">
 
       {/* Logo Section */}
       <div className="flex items-center mb-4 lg:mb-0">
         <Image
-          src="/path/to/logo.png" // Replace with your logo path
+          src="/images/Logo.jpg" 
           alt="Company Logo"
           width={100}
           height={50}
+          className='rounded-2xl h-28 w-40'
         />
       </div>
 
@@ -28,8 +29,8 @@ export const Footer = () => {
 
       {/* Contact Information */}
       <div className="text-center mb-4 lg:mb-0">
-        <p>Contact Us: <a href="mailto:info@example.com" className="text-white hover:text-gray-400">info@example.com</a></p>
-        <p>Phone: <a href="tel:+1234567890" className="text-white hover:text-gray-400">(123) 456-7890</a></p>
+        <p>Contact Us: <a href="mailto:summittechresources@gmail.com" className="text-white hover:text-gray-400">summittechresources@gmail.com</a></p>
+        <p>Phone: <a href="tel:+2349036936440" className="text-white hover:text-gray-400">09036936440</a></p>
       </div>
 
       {/* Social Media Icons */}

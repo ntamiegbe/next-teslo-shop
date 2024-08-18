@@ -38,7 +38,7 @@ export const ProductSlideshow = ({ products, className }: Props) => {
   useEffect(() => {
     const timer = setInterval(() => {
       if (emblaApi) emblaApi.scrollNext();
-    }, 3000); // Change slide every 3 seconds
+    }, 2000); // Change slide every 2 seconds
 
     return () => clearInterval(timer);
   }, [emblaApi]);
@@ -47,8 +47,8 @@ export const ProductSlideshow = ({ products, className }: Props) => {
     <div className={`${className} relative w-full overflow-hidden`}>
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
-          {products.map((product, productIndex) => (
-            <div key={product.id} className="embla__slide relative w-full h-[50vh] lg:h-[80vh]">
+          {products.map((product) => (
+            <div key={product.id} className="embla__slide relative w-full h-[30vh] lg:h-[50vh]">
               <Image
                 src={product.images[0]}
                 alt={`${product.title}`}
@@ -61,28 +61,20 @@ export const ProductSlideshow = ({ products, className }: Props) => {
               {/* Adjusted Text Positioning */}
               <div className="absolute inset-y-0 left-0 right-0 flex flex-col items-start justify-center text-left text-white p-8">
                 <motion.h2
-                  className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-wider"
+                  className="text-3xl lg:text-5xl font-semibold mb-4 tracking-wider"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.2 }}
                 >
                   {product.title}
                 </motion.h2>
-                <motion.p
-                  className="text-lg sm:text-xl md:text-2xl max-w-2xl mb-8 line-clamp-3"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  {product.description}
-                </motion.p>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
                 >
                   <Link href={`/product/${product.id}`} passHref>
-                    <span className="bg-white text-black px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-200 transition duration-300 cursor-pointer">
+                    <span className="bg-white text-black px-5 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300 cursor-pointer">
                       View Details
                     </span>
                   </Link>

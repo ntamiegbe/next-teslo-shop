@@ -46,14 +46,14 @@ export default function ProductGridItem({ product }: Props) {
   return (
     <>
       <div
-        className="rounded-lg overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl bg-white p-2"
+        className="rounded-2xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl bg-white p-2"
       >
         <div className="relative">
           <Link href={`/product/${product.id}`}>
             <Image
               src={displayImage}
               alt={product.title}
-              className="w-full h-[300px] object-cover transition-transform duration-300 transform hover:scale-105"
+              className="w-full h-[300px] object-cover"
               width={500}
               height={300}
             />
@@ -70,9 +70,9 @@ export default function ProductGridItem({ product }: Props) {
                   <Image
                     src={img}
                     alt={`${product.title} - ${index + 1}`}
-                    width={48}
-                    height={48}
-                    className="w-full h-full object-cover"
+                    width={100}
+                    height={100}
+                    className="w-full h-20 object-cover"
                   />
                 </motion.div>
               ))}
@@ -80,30 +80,29 @@ export default function ProductGridItem({ product }: Props) {
           )}
         </div>
 
-        <Link href={`/product/${product.id}`} className="p-8">
-          <h2
-            className="text-xl font-semibold text-gray-800 hover:text-indigo-600 transition-colors duration-200"
-          >
-            {product.title}
-          </h2>
-          <p className="text-sm text-gray-600 mt-2 line-clamp-2">{product.description}</p>
-          <div className="mt-4">
-            <span className="text-2xl font-bold text-indigo-600">₦{product.price.toLocaleString()}</span>
-            <div className="mt-3">
-              <QuantitySelector quantity={quantity} onQuantityChanged={setQuantity} />
-            </div>
-            <motion.button
-              onClick={addToCart}
-              disabled={posted}
-              className="btn-primary my-3 w-full flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <ShoppingCart size={20} className="mr-2" />
-              Add to Cart
-            </motion.button>
-          </div>
+        <Link
+          href={`/product/${product.id}`}
+          className="text-xl font-semibold text-[#1e186f] transition-colors duration-200 !mt-10 hover:underline"
+        >
+          {product.title}
         </Link>
+        <p className="text-md text-gray-600 mt-2 line-clamp-2">{product.description}</p>
+        <div className="mt-4">
+          <span className="text-2xl font-bold text-[#1e186f]">₦{product.price.toLocaleString()}</span>
+          <div className="mt-3">
+            <QuantitySelector quantity={quantity} onQuantityChanged={setQuantity} />
+          </div>
+          <motion.button
+            onClick={addToCart}
+            disabled={posted}
+            className="my-3 w-full flex items-center justify-center bg-[#1e186f] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ShoppingCart size={20} className="mr-2" />
+            Add to Cart
+          </motion.button>
+        </div>
 
         {isHovered && (
           <motion.div

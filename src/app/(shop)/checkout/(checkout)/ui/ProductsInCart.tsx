@@ -32,7 +32,7 @@ export const OrderComponent = () => {
     setLoaded(true);
   }, []);
 
-  const handleInputChange = (e:any) => {
+  const handleInputChange = (e: any) => {
     setCustomerInfo({
       ...customerInfo,
       [e.target.name]: e.target.value
@@ -40,7 +40,7 @@ export const OrderComponent = () => {
   };
 
   const sendWhatsAppMessage = (orderDetails: any) => {
-    const phoneNumber = '+2348087081503'; // Replace with the shop owner's number
+    const phoneNumber = '+2348174870158'; // Replace with the shop owner's number
     const message = encodeURIComponent(orderDetails);
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
