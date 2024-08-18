@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@floating-ui/react": "^0.26.22",
     "clsx": "^2.0.0",
     "embla-carousel-react": "^8.1.8",
     "framer-motion": "^11.3.21",
