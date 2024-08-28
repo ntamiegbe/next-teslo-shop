@@ -41,12 +41,11 @@ export const OrderSummary = () => {
       </div>
       <div className="mt-5 mb-2 w-full">
         <Link
-          className="flex btn-primary justify-center"
+          className="my-3 w-full flex items-center justify-center bg-[#1e186f] text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300"
           href="/checkout">
           Checkout
         </Link>
       </div>
     </>
-
   );
 };

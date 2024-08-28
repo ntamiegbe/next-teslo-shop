@@ -16,15 +16,15 @@ export const QuantitySelector = ( { quantity, onQuantityChanged }: Props ) => {
   return (
     <div className="flex">
       <button onClick={ () => onValueChanged( -1 ) }>
-        <IoRemoveCircleOutline size={ 30 } />
+        <IoRemoveCircleOutline size={30} color='#1e186f' />
       </button>
 
-      <span className="w-20 mx-3 p-5 bg-gray-100 text-center rounded">
+      <span className="w-14 mx-3 p-2 bg-gray-100 text-center rounded">
         { quantity }
       </span>
 
       <button onClick={ () => onValueChanged( +1 ) }>
-        <IoAddCircleOutline size={ 30 } />
+        <IoAddCircleOutline size={30} color='#1e186f' />
       </button>
     </div>
   );

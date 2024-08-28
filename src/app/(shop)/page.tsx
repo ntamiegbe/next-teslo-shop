@@ -4,7 +4,7 @@ import { products } from '../../../data';
 export default async function Home() {
 
   return (
-    <div className=''>
+    <>
       {/* <Title
         title="Summit Auto Tech"
         subtitle="Dealers on all kinds of car accessories and spare parts. Free delivery on all orders within Abuja. Call us on 08012345678 for more information."
@@ -18,7 +18,6 @@ export default async function Home() {
           products={products}
         />
       </div>
-
-    </div>
+    </>
   );
 }
