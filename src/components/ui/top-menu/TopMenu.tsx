@@ -25,6 +25,9 @@ export const TopMenu = () => {
           <span> | AutoTech</span> */}
           <Image src="/images/Logo-copy.jpg" alt="Summit AutoTech" width={150} height={50} className='w-40 h-20' />
         </Link>
+        <p className='text-[#1e186f] font-semibold'>
+          Tel: <a href="tel:09036936440" className='underline'>09036936440</a>, <a href="tel:08174870158"className='underline'>08174870158</a>
+        </p>
       </div>
 
       {/* Search, Cart, Menu */}
